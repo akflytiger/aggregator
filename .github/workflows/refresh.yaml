@@ -1,9 +1,9 @@
 name: Refresh
-on:
-  # performed every two hours
-  schedule:
+#on:
+  
+  #schedule:
     - cron: "0 */12 * * *"
-  workflow_dispatch:
+  #workflow_dispatch:
 
 concurrency:
   group: ${{ github.repository }}
