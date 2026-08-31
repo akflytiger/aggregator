@@ -65,6 +65,9 @@ jobs:
           fi
 
       - name: Collect
+        env:
+          HTTP_PROXY: http://${{ secrets.PROXY_USER }}:${{ secrets.PROXY_PASS }}@${{ secrets.PROXY_HOST }}:${{ secrets.PROXY_PORT }}
+          HTTPS_PROXY: https://${{ secrets.PROXY_USER }}:${{ secrets.PROXY_PASS }}@${{ secrets.PROXY_HOST }}:${{ secrets.PROXY_PORT }}
         run: python -u subscribe/collect.py --all --overwrite --skip
 
 
